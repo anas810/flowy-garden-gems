@@ -109,44 +109,39 @@ export function FeeRouting({ state }: { state: State }) {
               <line x1="20" y1="35" x2="28" y2="35" stroke={accent} strokeWidth="1.2" />
             </svg>
           ) : (
-            /* furnace */
+            /* flame only */
             <svg
-              key="furnace"
+              key="flame"
               viewBox="0 0 48 56"
               className="h-full w-full"
               fill="none"
             >
-              {/* furnace body */}
-              <rect
-                x="8"
-                y="18"
-                width="32"
-                height="34"
-                rx="3"
-                stroke={accent}
-                strokeWidth="1.5"
-              />
-              {/* opening */}
+              {/* main flame */}
               <path
-                d="M17 52 V40 a7 7 0 0 1 14 0 V52"
-                stroke={accent}
-                strokeWidth="1.5"
-              />
-              {/* flame */}
-              <path
-                d="M24 47 c-3.4-3.4 -1.6-6.4 0-9.4 c1.6 3 3.4 6 0 9.4 z"
+                d="M24 52 c-9-5 -10.5-13 -6-19.5 c1.2 3.2 3 4.6 5 5.4 c-1.6-6.8 0.6-12.6 5.4-16.9 c-0.6 5.4 1.6 8.2 4.4 11.4 c2.6 3 3.2 6.4 2.6 9.6 c-0.9 4.8 -4.6 8.2 -11.4 10 z"
                 fill={accent}
                 style={{
-                  transformOrigin: "24px 46px",
+                  transformOrigin: "24px 52px",
                   animation: "fee-flame 1.1s ease-in-out infinite",
                 }}
               />
-              {/* ash / disintegrating particles */}
+              {/* inner flame */}
+              <path
+                d="M24 50 c-4.4-2.6 -5-6.8 -2.4-10.4 c0.6 2 1.8 3 3.2 3.6 c-0.4-3.6 0.8-6 3-8 c0 2.8 1.4 4.4 2.6 6.2 c1.8 2.8 0.8 6.6 -6.4 8.6 z"
+                fill="var(--background)"
+                opacity={0.45}
+                style={{
+                  transformOrigin: "24px 50px",
+                  animation: "fee-flame 1.1s ease-in-out infinite",
+                  animationDelay: "0.2s",
+                }}
+              />
+              {/* embers */}
               {[0, 1, 2].map((i) => (
                 <circle
                   key={i}
                   cx={20 + i * 4}
-                  cy="34"
+                  cy="26"
                   r="1.2"
                   fill={accent}
                   style={{
@@ -158,6 +153,7 @@ export function FeeRouting({ state }: { state: State }) {
               ))}
             </svg>
           )}
+
         </div>
       </div>
 
