@@ -6,7 +6,7 @@ export function FeeRouting({ state }: { state: State }) {
 
   return (
     <div
-      className="fee-routing pointer-events-none absolute bottom-4 left-4 w-36 sm:bottom-8 sm:left-12 sm:w-44"
+      className="fee-routing pointer-events-none absolute left-6 top-[72%] w-36 sm:left-16 sm:w-44"
       aria-hidden="true"
     >
       <span className="label text-[10px] text-muted-foreground">
